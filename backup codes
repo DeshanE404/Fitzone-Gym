@@ -1,0 +1,66 @@
+.join .container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.join .contact-form {
+    background: transparent;     /* Transparent so container shows through */
+    padding: 0;                  /* Remove any default padding */
+}
+
+.join .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.join .form-group input,
+.join .form-group textarea {
+    background: #fff;            /* White fields for contrast */
+    border: 1px solid #ccc;      /* Light border */
+    border-radius: 8px;          /* Rounded corners on fields */
+    padding: 12px;               /* Field padding */
+    width: 100%;                 /* Full width */
+    font-size: 1rem;
+    color: #333;
+}
+
+.join .form-group input::placeholder,
+.join .form-group textarea::placeholder {
+    color: #999;                 /* Gray placeholder text */
+}
+
+.join .contact-form button.btn-primary {
+    width: 100%;                 /* Full width button */
+    padding: 15px;
+    background: linear-gradient(45deg, #4CAF50, #66BB6A);  /* Green gradient */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.join .contact-form button.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);  /* Green shadow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .join {
+        margin-top: 80px;
+    }
+    
+    .join .container {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
+    
+    .join .container h2 {
+        font-size: 1.75rem;
+    }
+}

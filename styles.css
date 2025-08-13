@@ -1,0 +1,538 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header & Navigation */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #4CAF50;  /* Changed from orange to light green */
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #4CAF50;  /* Changed from orange to light green */
+}
+
+.cta-btn {
+    background: linear-gradient(45deg, #4CAF50, #66BB6A);  /* Changed gradient to green */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);  /* Green shadow */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
+                url('images/gym2.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content .highlight {
+    color: #4CAF50;  /* Changed highlight color to green */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #4CAF50, #66BB6A);  /* Green gradient */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 15px 30px;
+    border: 2px solid #4CAF50;  /* Green border */
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);  /* Green shadow */
+}
+
+.btn-secondary:hover {
+    background: #4CAF50;  /* Green background on hover */
+    transform: translateY(-3px);
+}
+
+/* Services Section */
+.services {
+    padding: 5rem 5%;
+    background: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: #4CAF50;  /* Green icons */
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* About Section */
+.about {
+    padding: 5rem 5%;
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #4CAF50;  /* Green statistics numbers */
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.about-image {
+    background: linear-gradient(45deg, #4CAF50, #66BB6A);  /* Green gradient */
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+}
+
+/* Trainers Section */
+.trainers {
+    padding: 5rem 5%;
+    background: #f8f9fa;
+}
+
+.trainers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.trainer-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.trainer-card:hover {
+    transform: translateY(-10px);
+}
+
+.trainer-image {
+    height: 250px;
+    background: linear-gradient(45deg, #4CAF50, #66BB6A);  /* Green gradient for trainer images */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+}
+
+.trainer-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.trainer-info h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.trainer-info p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #4CAF50;  /* Green background on hover */
+    color: white;
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 5%;
+    background: #333;
+    color: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #4CAF50;  /* Green contact heading */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #4CAF50;  /* Green contact icons */
+    width: 50px;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Footer */
+.footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 2rem 5%;
+}
+
+/* Transparent black box form container */
+.join {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 100%;
+    color: #fff; /* White text for headings and labels */
+}
+
+/* Center text for heading */
+.join h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.info-box {
+    background: rgba(255, 255, 255, 0.15); /* Light transparent */
+    padding: 1.5rem;
+    border-radius: 15px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto 2rem auto; /* Center + space below */
+    text-align: center;
+    color: #fff;
+    backdrop-filter: blur(4px); /* Glassmorphism effect */
+}
+
+.info-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.mini-info-box {
+    background: rgba(57, 155, 98, 0.644);  /* Darker transparent overlay */
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    backdrop-filter: blur(2px); /* Slight blur to match style */
+}
+
+.mini-info-box h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.0rem;
+    font-weight: bold;
+}
+
+/* Flexbox for side-by-side layout */
+.list-container {
+    display: flex;
+    justify-content: space-between; /* Space between lists */
+    gap: 1.5rem; /* Gap between columns */
+    flex-wrap: wrap; /* Prevent overflow on smaller screens */
+    text-align: left; /* Keep list text left-aligned */
+}
+
+/* Style the lists */
+.list-container ul {
+    list-style-type: disc; /* Bullet points */
+    padding-left: 20px; /* Space before bullet */
+    margin: 0;
+    flex: 1; /* Equal width for both lists */
+    color: #fff; /* White text inside the transparent box */
+}
+
+.list-container li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Form groups */
+.join .form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Inputs and textareas inside the form */
+.join .form-group input,
+.join .form-group textarea {
+    background: #fff; /* White background for readability */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    font-size: 1rem;
+    color: #333; /* Dark text inside inputs */
+}
+
+.join .form-group input::placeholder,
+.join .form-group textarea::placeholder {
+    color: #999;
+}
+
+/* Submit button */
+.join button.btn-primary {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #4CAF50, #66BB6A);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.join button.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .join {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
+    .join h2 {
+        font-size: 1.75rem;
+    }
+}
