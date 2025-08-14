@@ -13,8 +13,9 @@ include('config.php');
     <title>FitZone Gym - Transform Your Body, Transform Your Life</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-        <link href="styles.css" rel="stylesheet">
-
+    <link href="styles.css" rel="stylesheet">
+    <script src="animations.js"></script>
+    <script src="animation.js" defer></script>
     <style>
        
     </style>
@@ -54,23 +55,41 @@ include('config.php');
     ];
     
     // Trainers data
-    $trainers = [
-        [
-            'name' => 'Sarah Johnson',
-            'specialty' => 'Strength & Conditioning Coach',
-            'icon' => 'fas fa-female'
-        ],
-        [
-            'name' => 'Mike De Periz',
-            'specialty' => 'Personal Trainer & Nutritionist',
-            'icon' => 'fas fa-male'
-        ],
-        [
-            'name' => 'Ama Jayasingha',
-            'specialty' => 'Yoga & Pilates Instructor',
-            'icon' => 'fas fa-spa'
-        ]
-    ];
+// Trainers data
+$trainers = [
+    [
+        'name' => 'Sarah Johnson',
+        'specialty' => 'Strength & Conditioning Coach',
+        'icon' => 'fas fa-female'
+    ],
+    [
+        'name' => 'Mike De Periz',
+        'specialty' => 'Personal Trainer & Nutritionist',
+        'icon' => 'fas fa-male'
+    ],
+    [
+        'name' => 'Ama Jayasingha',
+        'specialty' => 'Yoga & Pilates Instructor',
+        'icon' => 'fas fa-spa'
+    ],
+    // Additional trainers (will be hidden at first)
+    [
+        'name' => 'David Silva',
+        'specialty' => 'CrossFit Specialist',
+        'icon' => 'fas fa-running'
+    ],
+    [
+        'name' => 'Emily Carter',
+        'specialty' => 'Zumba & Dance Instructor',
+        'icon' => 'fas fa-music'
+    ],
+    [
+        'name' => 'James Lee',
+        'specialty' => 'Martial Arts Coach',
+        'icon' => 'fas fa-fist-raised'
+    ]
+];
+
     ?>
 
  
@@ -144,32 +163,38 @@ include('config.php');
     </section>
 
     <!-- Trainers Section -->
-    <section id="trainers" class="trainers">
-        <div class="container">
-            <div class="section-title">
-                <h2>Meet Our Trainers</h2>
-                <p>Our certified trainers are passionate about helping you achieve your fitness goals with personalized guidance and motivation.</p>
-            </div>
-            <div class="trainers-grid">
-                <?php foreach ($trainers as $trainer): ?>
-                <div class="trainer-card">
-                    <div class="trainer-image">
-                        <i class="<?php echo $trainer['icon']; ?>"></i>
-                    </div>
-                    <div class="trainer-info">
-                        <h3><?php echo $trainer['name']; ?></h3>
-                        <p><?php echo $trainer['specialty']; ?></p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
+<section id="trainers" class="trainers">
+    <div class="container">
+        <div class="section-title">
+            <h2>Meet Our Trainers</h2>
+            <p>Our certified trainers are passionate about helping you achieve your fitness goals with personalized guidance and motivation.</p>
+        </div>
+        <div class="trainers-grid">
+            <?php foreach ($trainers as $index => $trainer): ?>
+            <div class="trainer-card 
+            <?php echo $index > 2 ? 'hidden-trainer' : ''; ?>">
+                <div class="trainer-image">
+                    <i class="<?php echo $trainer['icon']; ?>"></i>
+                </div>
+                <div class="trainer-info">
+                    <h3><?php echo $trainer['name']; ?></h3>
+                    <p><?php echo $trainer['specialty']; ?></p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
-                <?php endforeach; ?>
             </div>
+            <?php endforeach; ?>
         </div>
-    </section>
+
+        <!-- See All Trainers Button -->
+        <div style="text-align:center; margin-top: 20px;">
+            <button id="seeAllTrainers" class="btn-primary">See All Trainers</button>
+        </div>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -232,48 +257,7 @@ include('config.php');
     ?>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Header background change on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(0, 0, 0, 0.98)';
-            } else {
-                header.style.background = 'rgba(0, 0, 0, 0.95)';
-            }
-        });
-
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards
-        document.querySelectorAll('.service-card, .trainer-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
+   
     </script>
     <?php include('include/footer.php'); ?>
 </body>

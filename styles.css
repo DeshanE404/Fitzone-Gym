@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -524,6 +526,9 @@ body {
 .join button.btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+.hidden-trainer {
+    display: none;
 }
 
 /* Responsive for mobile */

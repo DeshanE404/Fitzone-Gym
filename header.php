@@ -16,6 +16,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <script src="smooth-scroll.js"></script>
 </head>
 <body>
 <header class="header">
@@ -23,10 +24,10 @@
         <a href="index.php" class="logo">FitZone Gym</a>
         <ul class="nav-links">
             <li><a href="index.php" <?php if($currentPage=='index.php') echo 'class="active"'; ?>>Home</a></li>
-            <li><a href="services.php" <?php if($currentPage=='services.php') echo 'class="active"'; ?>>Services</a></li>
-            <li><a href="about.php" <?php if($currentPage=='about.php') echo 'class="active"'; ?>>About</a></li>
-            <li><a href="trainers.php" <?php if($currentPage=='trainers.php') echo 'class="active"'; ?>>Trainers</a></li>
-            <li><a href="contact.php" <?php if($currentPage=='contact.php') echo 'class="active"'; ?>>Contact</a></li>
+            <li><a href="index.php#services" <?php if($currentPage=='index.php') echo 'class="active"'; ?>>Services</a></li>
+            <li><a href="index.php#about" <?php if($currentPage=='index.php') echo 'class="active"'; ?>>About</a></li>
+            <li><a href="index.php#trainers" <?php if($currentPage=='index.php') echo 'class="active"'; ?>>Trainers</a></li>
+            <li><a href="index.php#contact" <?php if($currentPage=='index.php') echo 'class="active"'; ?>>Contact</a></li>
         </ul>
         <div class="header-buttons">
             <?php if (isset($_SESSION['user_id'])): ?>
