@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('config.php'); 
-$pageTitle = 'Sign up Form';
+$pageTitle = 'Enrollment Form';
 include('header.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h3>To obtain a FitZone Gym subscription, kindly transfer your payment to the bank.Fill out the enrollment form, attach the receipt, and submit it after the transaction.Below are the bank's information!</h3>
         <p style="color: rgba(148, 226, 236, 1);">Gym membership prices are , 2500Rs/month (For Adult), 1000Rs/month (For Students)</p>
         </div>
-    <div class="list-container">
+        <div class="list-container">
         <ul>
             <p style="color: rgb(73, 190, 211, 1);"><b>Commercial Bank Kurunegala</b></p>
             <li>Name- Fitzone Gym</li>
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container join">
         <h2>Join Now</h2>
         <div class="contact-form">
-enroll    <div class="form-group">
+        <div class="form-group">
         <input type="text" name="name" placeholder="Your Name" required>
     </div>
     <div class="form-group">
