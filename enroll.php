@@ -91,28 +91,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </ul>
     </div>
     <div class="container join">
-        <h2>Join Now</h2>
-        <div class="contact-form">
-        <div class="form-group">
-        <input type="text" name="name" placeholder="Your Name" required>
+<div class="container join">
+    <h2>Join Now</h2>
+    <div class="contact-form">
+        <!-- Add form opening tag -->
+        <form action="enroll.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" name="contact" placeholder="Your Contact">
+            </div>
+            <div class="form-group">
+                <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="file">Attach a file (JPG or PDF):</label>
+                <input type="file" name="attachment" accept=".jpg,.jpeg,.pdf">
+            </div>
+            <button type="submit" class="btn-primary">Sign Up</button>
+        </form> <!-- Closing tag -->
     </div>
-    <div class="form-group">
-        <input type="email" name="email" placeholder="Your Email" required>
-    </div>
-    <div class="form-group">
-        <input type="tel" name="contact" placeholder="Your Contact">
-    </div>
-    <div class="form-group">
-        <textarea name="message" rows="5" placeholder="Your Message"></textarea>
-    </div>
-    <div class="form-group">
-        <label for="file">Attach a file (JPG or PDF):</label>
-        <input type="file" name="attachment" accept=".jpg,.jpeg,.pdf">
-    </div>
-    <button type="submit" class="btn-primary">Sign Up</button>
-</form>
-        </div>
-    </div>
+</div>
+
 </section>
 
 <!-- Display JS popup if session message exists -->

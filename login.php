@@ -23,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['admin_email'], $_POST
     }
 }
 ?>
-
 <section id="home" class="hero">
     <div class="overlay"></div>
     <div class="hero-content"></div>
