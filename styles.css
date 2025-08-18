@@ -396,6 +396,28 @@ body {
     text-align: center;
     padding: 2rem 5%;
 }
+
+.userdashboard-container {
+    display: flex;
+    justify-content: center; /* centers boxes horizontally */
+    gap: 2%; /* space between the two boxes */
+    margin-top: 5%; /* space below header */
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.userdashboard-box {
+    flex: 1; /* boxes take equal width */
+    background: rgba(119, 110, 110, 0.35);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    color: #f1f1f1;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    backdrop-filter: blur(6px);
+    min-width: 300px; /* optional minimum width */
+}
+
 /* Dashboard title */
 .admintitle-box {
     display: inline-block; /* shrink to fit content */
