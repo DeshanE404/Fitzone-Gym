@@ -195,7 +195,35 @@ $trainers = [
         </div>
     </div>
 </section>
+   <section id="reviews" class="reviews">
+    <div class="container">
+        <div class="section-title">
+            <h2>Customer Reviews</h2>
+            <p>See what our members have to say about their fitness journey at FitZone Gym!</p>
+        </div>
+        <div class="reviews-scroll">
+            <?php
+            try {
+                $stmt = $dbh->query("SELECT * FROM reviews ORDER BY review_id DESC");
+                $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+                if ($reviews) {
+                    foreach ($reviews as $rev) {
+                        echo '<div class="review-card">';
+                        echo '<p class="name">"' . htmlspecialchars($rev['name']) . '"</p>';
+                        echo '<p class="message">- ' . htmlspecialchars($rev['message']) . '</p>';
+                        echo '</div>';
+                    }
+                } else {
+                    echo '<p>No reviews yet.</p>';
+                }
+            } catch (PDOException $e) {
+                echo '<p>Error loading reviews: ' . $e->getMessage() . '</p>';
+            }
+            ?>
+        </div>
+    </div>
+    </section>
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -234,7 +262,7 @@ $trainers = [
                 
             </div>
         </div>
-    </section>
+     
 
     <!-- Footer -->
     <footer class="footer">
@@ -256,9 +284,7 @@ $trainers = [
     }
     ?>
 
-    <script>
-   
-    </script>
+ 
     <?php include('include/footer.php'); ?>
 </body>
 </html>

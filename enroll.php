@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="tel" name="contact" placeholder="Your Contact">
             </div>
             <div class="form-group">
-                <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+                <textarea name="message" rows="5" placeholder="Enter your Date of birth,gender,address here"></textarea>
             </div>
             <div class="form-group">
                 <label for="file">Attach a file (JPG or PDF):</label>

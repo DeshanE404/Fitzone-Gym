@@ -150,6 +150,7 @@ body {
     transform: translateY(-3px);
 }
 
+
 /* Services Section */
 .services {
     padding: 5rem 5%;
@@ -386,9 +387,6 @@ body {
     padding: 2rem;
     border-radius: 15px;
 }
-
-
-
 /* Footer */
 .footer {
     background: #000;
@@ -396,29 +394,139 @@ body {
     text-align: center;
     padding: 2rem 5%;
 }
+.reviews {
+    padding: 50px 0;
+    background: rgba(240, 240, 240, 0.9); /* light gray background for contrast */
+    color: #333; /* dark text for readability */
+}
+
+.reviews .section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #111; /* ensure title is visible */
+}
+
+.reviews-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    scroll-behavior: smooth;
+}
+
+.reviews-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.reviews-scroll::-webkit-scrollbar-thumb {
+    background: #888; /* lighter thumb for visibility */
+    border-radius: 4px;
+}
+
+.review-card {
+    flex: 0 0 300px; /* fixed width */
+    background: #ffffff; /* keep card white */
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* slightly lighter shadow */
+    color: #222; /* card text darker for readability */
+}
+
+.review-message {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #555; /* subtle color for message */
+}
+
+.review-name {
+    text-align: right;
+    font-weight: bold;
+    color: #000; /* name in black for emphasis */
+}
 
 .userdashboard-container {
     display: flex;
-    justify-content: center; /* centers boxes horizontally */
-    gap: 2%; /* space between the two boxes */
-    margin-top: 5%; /* space below header */
+    flex-direction: column; /* stack rows vertically */
+    gap: 2%; /* space between rows */
+    margin-top: 5%;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Row that contains the top 3 boxes */
+.userdashboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
+
+/* Boxes */
 .userdashboard-box {
-    flex: 1; /* boxes take equal width */
+    flex: 1; /* equal width for each box in the row */
     background: rgba(119, 110, 110, 0.35);
     padding: 1rem 2rem;
     border-radius: 12px;
     color: #f1f1f1;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     backdrop-filter: blur(6px);
-    min-width: 300px; /* optional minimum width */
+    min-width: 300px;
 }
 
+.userdashboard-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.userdashboard-box li {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(21, 238, 57, 0.849);
+    padding-bottom: 0.5rem;
+}
+
+/* View button for resources */
+.userdashboard-resources ul li a.view-btn {
+    display: inline-block;
+    padding: 4px 10px;
+    margin-left: 5px;
+    background: rgba(18, 218, 84, 0.966);
+    color: #f1f1f1;
+    text-decoration: none;
+    border: 1px solid rgba(18, 218, 84, 0.966);
+    border-radius: 6px;
+}
+
+/* Search Form */
+.search-form {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.search-form input {
+    padding: 0.5rem;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-form button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+.admin-boxes-wrapper {
+    width: 95%;
+    margin: 5% auto 0 auto;
+}
 /* Dashboard title */
+/* Admin title box (now inside the container) */
 .admintitle-box {
     display: inline-block; /* shrink to fit content */
     background: rgba(105, 99, 99, 0.35);
@@ -427,10 +535,7 @@ body {
     color: #f1f1f1;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     backdrop-filter: blur(6px);
-    position: absolute;
-    top: 100px; /* under header */
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto 20px auto; /* center and add spacing below */
 }
 
 .admintitle-box h1 {
@@ -438,13 +543,22 @@ body {
     font-size: 2rem;
 }
 
-/* Container for the three admin boxes */
+/* Container for title + boxes */
 .admin-boxes-container {
+    display: flex;
+    flex-direction: column;  /* stack title first, then boxes */
+    align-items: center;
+    width: 95%;
+    margin: 5% auto 0 auto; 
+    gap: 2rem; /* spacing between title and boxes */
+}
+
+/* Row holding the 3 main admin boxes */
+.admin-boxes-row {
     display: flex;
     justify-content: space-between; /* left, center, right */
     align-items: flex-start;
-    width: 95%;
-    margin: 5% auto 0 auto; /* top margin and centered horizontally */
+    width: 100%;
     gap: 2%;
 }
 
@@ -481,6 +595,7 @@ body {
 /* Box headings */
 .admin-box h1,
 .userregister-box h1,
+.admin-small-box h1,
 .deleteuser-box h1 {
     text-align: center;
     margin: 0 0 1rem 0;
@@ -533,6 +648,55 @@ body {
 .register-form button:hover {
     background-color: #32dd4e;
 }
+
+/* Small scrollable box */
+.admin-small-box {
+    margin: 30px auto;
+    padding: 20px;
+    width: 40%;
+    height: 40%;
+    background: rgba(105, 99, 99, 0.35);
+    color: #f1f1f1;
+    text-align: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    border-radius: 12px;
+
+    /* scrollable */
+    overflow-y: auto;   /* vertical scroll */
+    overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+/* New smaller box below the 3 main ones */
+.admin-small-box {
+    margin: 30px auto;
+    padding: 20px;
+    width: 40%;
+    height: 20%;
+    background: rgba(105, 99, 99, 0.35);
+    color: #f1f1f1;
+    text-align: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    border-radius: 12px;
+}
+.admin-small-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.admin-small-box::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+
+/* Ensure dashboard section is scrollable */
+#dashboard {
+    overflow-y: auto;
+    max-height: 100vh;        /* don’t overflow screen */
+    padding-bottom: 5rem;     /* spacing at bottom */
+}
+
 
 
 
