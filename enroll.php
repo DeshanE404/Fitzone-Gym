@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-<section class="hero">
+<section id="enrollment" >
         <div class="container info-box">
         <h2>FitZone Gym Enrollment</h2>
                 <div class="mini-info-box">
@@ -80,12 +80,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <div class="list-container">
         <ul>
-            <p style="color: rgb(73, 190, 211, 1);"><b>Commercial Bank Kurunegala</b></p>
+            <p style="color: rgba(29, 237, 241, 1);"><b>Commercial Bank Kurunegala</b></p>
             <li>Name- Fitzone Gym</li>
             <li>Account Number- 2985684952</li>
         </ul>
         <ul>
-            <p style="color: rgba(255, 255, 255, 1);"><b>Peoples Bank Kurunegala</b></p>
+            <p style="color: rgba(29, 237, 241, 1);"><b>Peoples Bank Kurunegala</b></p>
             <li>Name- Fitzone Gym</li>
             <li>Account Number- 100569825689</li>
         </ul>

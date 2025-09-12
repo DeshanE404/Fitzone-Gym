@@ -75,18 +75,19 @@ body {
 
 /* Hero Section */
 .hero {
-    position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
-                url('images/gym2.jpeg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('images/gym2.jpeg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
+
+
 
 .hero-content h1 {
     font-size: 4rem;
@@ -496,6 +497,14 @@ body {
     border: 1px solid rgba(18, 218, 84, 0.966);
     border-radius: 6px;
 }
+#dashboard {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)),
+              url('images/gym2.jpeg') no-repeat center center;
+  background-size: cover;
+  color: white; /* if needed for text */
+  padding: 2rem; /* some padding so content doesn't touch edges */
+  min-height: 100vh; /* optional - ensure background covers at least full viewport */
+}
 
 /* Search Form */
 .search-form {
@@ -535,9 +544,16 @@ body {
     color: #f1f1f1;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     backdrop-filter: blur(6px);
-    margin: 0 auto 20px auto; /* center and add spacing below */
+    margin: 0 auto 20px auto; /* center and add spacing below */    
+    }
+#dashboard {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)),
+              url('images/gym2.jpeg') no-repeat center center;
+  background-size: cover;
+  color: white; /* if needed for text */
+  padding: 2rem; /* some padding so content doesn't touch edges */
+  min-height: 100vh; /* optional - ensure background covers at least full viewport */
 }
-
 .admintitle-box h1 {
     text-align: center;
     font-size: 2rem;
@@ -855,6 +871,34 @@ body {
 .join button.btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+#enrollment {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('images/gym2.jpeg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh; /* To cover full viewport height */
+  padding: 80px 2rem 2rem; /* Top padding to offset fixed header (adjust 80px if header height differs) */
+  color: white;
+  display: flex;
+  justify-content: center; /* To horizontally center the .join box */
+  align-items: center;     /* To vertically center the .join box */
+}
+#userdashboard {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('images/gym2.jpeg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh; /* To cover full viewport height */
+  padding: 80px 2rem 2rem; /* Top padding to offset fixed header (adjust 80px if header height differs) */
+  color: white;
+  display: flex;
+  justify-content: center; /* To horizontally center the .join box */
+  align-items: center;     /* To vertically center the .join box */
 }
 .hidden-trainer {
     display: none;

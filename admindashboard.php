@@ -149,7 +149,7 @@ if (isset($_GET['delete_resource_id'])) {
 include('header.php');
 ?>
 
-<section id="dashboard" class="hero">
+<section id="dashboard" >
     <div class="admin-boxes-container">
 
         <!-- Admin Title Box -->

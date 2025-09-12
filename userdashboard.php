@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
     <title><?php echo htmlspecialchars($pageTitle); ?></title>
 </head>
 <body>
-<section id="userdashboard" class="hero">
+<section id="userdashboard">
     <div class="overlay"></div>
     <div class="userdashboard-container" style="display:flex; gap:2%; justify-content:center; margin-top:50px;">
         
