@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-// Check admin login
-if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {        //check if there is a admin login secssion
     header("Location: login.php");
     exit();
 }
@@ -10,7 +9,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
 include('config.php'); // $dbh is PDO
 
 // Handle member registration
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {           
     $name            = trim($_POST['name']);
     $email           = trim($_POST['email']);
     $dob             = trim($_POST['dob']);
@@ -20,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     $membership_type = trim($_POST['membership_type']);
     $password        = password_hash(trim($_POST['password']), PASSWORD_DEFAULT);
 
-    if (!empty($name) && !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL) &&
+    if (!empty($name) && !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL) &&         
         !empty($dob) && !empty($gender) && !empty($contact) && !empty($address) && !empty($membership_type)) {
 
         try {
@@ -99,9 +98,9 @@ if (isset($_POST['upload_resource'])) {
         $fileTmpPath = $_FILES['resource_file']['tmp_name'];
         $fileName = basename($_FILES['resource_file']['name']);
         $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-        
+        //prevents overiding files
         if (in_array($fileExt, $allowedExt)) {
-            $newFileName = uniqid() . '.' . $fileExt;
+            $newFileName = uniqid() . '.' . $fileExt;           
             $destPath = $uploadDir . $newFileName;
             
             if (move_uploaded_file($fileTmpPath, $destPath)) {

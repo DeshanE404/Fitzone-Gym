@@ -9,7 +9,8 @@ $admin_email = "adminfitzonegym@gmail.com";
 $admin_password = "fitzone@1234";
 
 // Handle Admin Login when form is submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['admin_email'], $_POST['admin_password'])) {
+// Validate agains hardcode credentials
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['admin_email'], $_POST['admin_password'])) { 
     $email = $_POST['admin_email'];
     $password = $_POST['admin_password'];
 
@@ -45,7 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['admin_email'], $_POST
             </form>
         </div>
 
-        <!-- Member Login (can be disabled or hidden for now) -->
         <div class="info-box">
             <h2>Member Login</h2>
             <form method="POST" action="member_login_process.php">

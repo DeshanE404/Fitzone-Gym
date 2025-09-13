@@ -2,7 +2,7 @@
 session_start();
 include('config.php'); // $dbh is PDO
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['member_email'], $_POST['member_password'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['member_email'], $_POST['member_password'])) {        //script only runs if the form was submitted with POST method
     $email = trim($_POST['member_email']);
     $password = trim($_POST['member_password']);
 
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['member_email'], $_POS
         $member = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($member && password_verify($password, $member['password'])) {
-            // Login successful
+            // Login successful will store these details so it can be used later
             $_SESSION['member_logged_in'] = true;
             $_SESSION['member_email'] = $member['email'];
             $_SESSION['member_name'] = $member['name'];

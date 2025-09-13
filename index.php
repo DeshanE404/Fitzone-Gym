@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('config.php');
-    $pageTitle = 'Sign up Form';
+    $pageTitle = 'Fitzone Gym';
     include('header.php');
 ?>
 
@@ -22,15 +22,15 @@ include('config.php');
 </head>
 <body>
     <?php
-    // PHP variables for dynamic content
+    // php variables for dynamic content
     $gym_name = "FitZone Gym";
     $tagline = "Transform Your Body, Transform Your Life";
     $phone = "0378598245";
     $email = "infofitzone@gmail.com";
     $address = "No 17, Kuruneala";
     
-    // Services data
-    $services = [
+    // Services data        //stored in a array allow easy looping with foreach, keeping the code clean
+    $services = [   
         [
             'icon' => 'fas fa-dumbbell',
             'title' => 'Weight Training',
@@ -53,9 +53,7 @@ include('config.php');
         ]
         
     ];
-    
-    // Trainers data
-// Trainers data
+    //stored in a array allow easy looping with foreach, keeping the code clean
 $trainers = [
     [
         'name' => 'Sarah Johnson',
@@ -72,7 +70,6 @@ $trainers = [
         'specialty' => 'Yoga & Pilates Instructor',
         'icon' => 'fas fa-spa'
     ],
-    // Additional trainers (will be hidden at first)
     [
         'name' => 'David Silva',
         'specialty' => 'CrossFit Specialist',
@@ -204,7 +201,7 @@ $trainers = [
         <div class="reviews-scroll">
             <?php
             try {
-                $stmt = $dbh->query("SELECT * FROM reviews ORDER BY review_id DESC");
+                $stmt = $dbh->query("SELECT * FROM reviews ORDER BY review_id DESC");       //Fetching revviews
                 $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 if ($reviews) {
@@ -270,21 +267,6 @@ $trainers = [
             <p>&copy; <?php echo date('Y'); ?> <?php echo $gym_name; ?>. All rights reserved. | Designed with ❤️ for fitness enthusiasts</p>
         </div>
     </footer>
-
-    <?php
-    // Handle form submission
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $name = htmlspecialchars($_POST['name']);
-        $email = htmlspecialchars($_POST['email']);
-        $phone = htmlspecialchars($_POST['phone'] ?? '');
-        $message = htmlspecialchars($_POST['message']);
-        
-        // Here you would typically send an email or save to database
-        echo "<script>alert('Thank you for your message, $name! We will get back to you soon.');</script>";
-    }
-    ?>
-
- 
     <?php include('include/footer.php'); ?>
 </body>
 </html>

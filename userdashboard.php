@@ -3,19 +3,19 @@ session_start();
 include('config.php'); 
 $pageTitle = 'Enrollment Form';
 include('header.php');
-// Handle search query
+// handle search query
 $searchQuery = '';
 if (isset($_GET['search'])) {
     $searchQuery = trim($_GET['search']);
 }
-// Handle review submission
+// handle review submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
     $reviewName = trim($_POST['review_name']);
     $reviewMessage = trim($_POST['review_message']);
 
-    if (!empty($reviewName) && !empty($reviewMessage)) {
+    if (!empty($reviewName) && !empty($reviewMessage)) {                                    //prepared statement
         try {
-            $stmt = $dbh->prepare("INSERT INTO reviews (name, message) VALUES (:name, :message)");
+            $stmt = $dbh->prepare("INSERT INTO reviews (name, message) VALUES (:name, :message)");      //prevents SQL Injection attacks
             $stmt->execute([':name' => $reviewName, ':message' => $reviewMessage]);
             $successMsg = "Review submitted successfully!";
         } catch (PDOException $e) {
@@ -26,14 +26,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
     }
 }
 ?>
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo htmlspecialchars($pageTitle); ?></title>
-</head>
+     <!-- display resourse name XSS -->
+    <title><?php echo htmlspecialchars($pageTitle); ?></title>          
 <body>
 <section id="userdashboard">
     <div class="overlay"></div>
@@ -51,8 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
                 </form>
                 <ul>
                     <?php
-                    try {
-                        if (!empty($searchQuery)) {
+                    try {                                                           //submit via GET
+                        if (!empty($searchQuery)) {                                                             
                             $stmt = $dbh->prepare("SELECT * FROM resources WHERE resource_name LIKE :name ORDER BY resource_id DESC");
                             $stmt->execute([':name' => "%$searchQuery%"]);
                         } else {
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
                         } else {
                             echo '<li>No resources found.</li>';
                         }
-                    } catch (PDOException $e) {
+                    } catch (PDOException $e) {                                                                     // try,catch to catch errors
                         echo '<li>Error loading resources: ' . $e->getMessage() . '</li>';
                     }
                     ?>
